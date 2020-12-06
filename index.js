@@ -14,6 +14,7 @@ io.on("connection", (socket) => {
   console.log(socket.id);
   socket.on("data", (arg) => {
     console.log(arg);
+    socket.emit("data", args);
   });
 });
 
