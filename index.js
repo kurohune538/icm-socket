@@ -11,9 +11,13 @@ app.use(express.static(__dirname + "/"));
 console.log("My socket is running");
 
 io.on("connection", (socket) => {
-  socket.on("data", (arg) => {
+  socket.on("text", (arg) => {
     console.log(arg);
-    socket.emit("data", arg);
+    socket.emit("text", arg);
+  });
+  socket.on("emoji", (arg) => {
+    console.log(arg);
+    socket.emit("emoji", arg);
   });
 });
 
