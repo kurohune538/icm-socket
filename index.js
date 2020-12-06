@@ -3,6 +3,8 @@ const server = require("http").createServer(app);
 const options = {};
 const io = require("socket.io")(server, options);
 
+app.use(express.static(__dirname + "/"));
+
 // app.use(express.static("public"));
 console.log("My socket is running");
 
