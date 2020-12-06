@@ -4,7 +4,7 @@ const options = {};
 const io = require("socket.io")(server, options);
 const PORT = process.env.PORT || 3333;
 
-app.use(express.static(__dirname + "/"));
+server.use(express.static(__dirname + "/"));
 
 // app.use(express.static("public"));
 console.log("My socket is running");
