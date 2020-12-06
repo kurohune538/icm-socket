@@ -2,6 +2,7 @@ const app = require("express")();
 const server = require("http").createServer(app);
 const options = {};
 const io = require("socket.io")(server, options);
+const PORT = process.env.PORT || 3333;
 
 app.use(express.static(__dirname + "/"));
 
@@ -12,4 +13,4 @@ io.on("connection", (socket) => {
   console.log(socket.id);
 });
 
-server.listen(3333);
+server.listen(PORT);
