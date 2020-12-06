@@ -12,6 +12,9 @@ console.log("My socket is running");
 
 io.on("connection", (socket) => {
   console.log(socket.id);
+  socket.on("data", (arg) => {
+    console.log(arg);
+  });
 });
 
 server.listen(PORT);
