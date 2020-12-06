@@ -13,7 +13,7 @@ console.log("My socket is running");
 io.on("connection", (socket) => {
   socket.on("data", (arg) => {
     console.log(arg);
-    socket.emit("data", args);
+    socket.emit("data", arg);
   });
 });
 
