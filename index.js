@@ -13,11 +13,11 @@ console.log("My socket is running");
 io.on("connection", (socket) => {
   socket.on("text", (arg) => {
     console.log(arg);
-    socket.emit("text", arg);
+    socket.broadcast.emit("text", arg);
   });
   socket.on("emoji", (arg) => {
     console.log(arg);
-    socket.emit("emoji", arg);
+    socket.broadcast.emit("emoji", arg);
   });
 });
 
